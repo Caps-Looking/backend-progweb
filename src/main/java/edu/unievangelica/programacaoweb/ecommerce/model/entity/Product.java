@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.sql.Blob;
 
 @Getter
 @Setter
@@ -31,6 +32,10 @@ public class Product implements IEntity {
 
     @NotNull
     private float price;
+
+    @Lob
+    @Column(columnDefinition="mediumblob")
+    private byte[] image;
 
     @ManyToOne
     private Category category;

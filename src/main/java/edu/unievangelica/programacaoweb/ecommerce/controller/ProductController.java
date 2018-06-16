@@ -28,7 +28,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public BaseResponse save(@Valid @RequestBody Product product) {
+    public BaseResponse save(@RequestBody Product product) {
         return new BaseResponse("Successfully loaded", productService.save(product), HttpStatus.CREATED);
     }
 
